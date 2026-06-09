@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Node
+node_modules/
+dist/
+.next/
+
+# Database
+*.sqlite3
+*.db
+
+# Chroma vector store (can be large)
+backend/chroma_db/
+
+# Sentence transformer model cache (very large)
+backend/models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
