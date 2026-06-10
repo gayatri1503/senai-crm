@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from app.api.routes import ingest, rag, dashboard, threads, agent, analytics
+from app.api.routes import ingest, rag, dashboard, threads, agent, analytics, intelligence
 
 load_dotenv()
 
@@ -25,6 +25,7 @@ app.include_router(dashboard.router, prefix="", tags=["Dashboard"])
 app.include_router(threads.router, prefix="", tags=["Threads"])
 app.include_router(agent.router, prefix="", tags=["Agent"])
 app.include_router(analytics.router, prefix="", tags=["Analytics"])
+app.include_router(intelligence.router, prefix="", tags=["Intelligence"])
 
 
 @app.get("/")
