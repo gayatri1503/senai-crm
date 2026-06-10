@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
-from app.api.routes import ingest
+from app.api.routes import ingest, rag
 
 load_dotenv()
 
@@ -19,8 +19,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Register routers
 app.include_router(ingest.router, prefix="/api", tags=["Ingestion"])
+app.include_router(rag.router, prefix="", tags=["RAG"])
 
 
 @app.get("/")
